@@ -1,0 +1,128 @@
+# Blender v2.80 (sub 75) OBJ File: ''
+# www.blender.org
+
+# based on https://github.com/DanielChappuis/reactphysics3d/blob/master/testbed/meshes/cube.obj
+
+# object format geometry file describtion: https://paulbourke.net/dataformats/obj/
+
+# Polygonal and free-form geometry statement.
+#
+#     v x y z w
+#
+# Specifies a geometric vertex and its x y z coordinates. Rational
+# curves and surfaces require a fourth homogeneous coordinate, also
+# called the weight.
+#
+# x y z are the x, y, and z coordinates for the vertex. These are
+# floating point numbers that define the position of the vertex in
+# three dimensions.
+v 1.000000 1.000000 -1.000000    # 1. f1          f5 f6
+v 1.000000 -1.000000 -1.000000   # 2.          f4 f5 f6
+v 1.000000 1.000000 1.000000     # 3. f1 f2       f5
+v 1.000000 -1.000000 1.000000    # 4.    f2    f4 f5
+v -1.000000 1.000000 -1.000000   # 5. f1    f3       f6
+v -1.000000 -1.000000 -1.000000  # 6.       f3 f4    f6
+v -1.000000 1.000000 1.000000    # 7. f1 f2 f3
+v -1.000000 -1.000000 1.000000   # 8.    f2 f3 f4
+
+
+# Vertex statement for both polygonal and free-form geometry.
+# 
+#     vt u v w
+# 
+# Specifies a texture vertex and its coordinates. A 1D texture
+# requires only u texture coordinates, a 2D texture requires both u
+# and v texture coordinates, and a 3D texture requires all three
+# coordinates.
+# 
+# u is the value for the horizontal direction of the texture.
+# 
+# v is an optional argument.
+# 
+# v is the value for the vertical direction of the texture. The
+# default is 0.
+vt 0.500000 1.000000  #  1. f1 tr
+vt 0.000000 1.000000  #  2. f1 tl
+vt 0.000000 0.666666  #  3. f1 bl
+vt 0.500000 0.666666  #  4. f1 br
+vt 0.500000 0.333333  #  5.    f2 tl
+vt 0.500000 0.666666  #  6.    f2 bl
+vt 0.000000 0.666666  #  7.    f2 br
+vt 0.000000 0.333333  #  8.    f2 tr
+vt 1.000000 0.333333  #  9.       f3 br
+vt 1.000000 0.666666  # 10.       f3 tr
+vt 0.500000 0.666666  # 11.       f3 tl
+vt 0.500000 0.333333  # 12.       f3 bl
+vt 1.000000 1.000000  # 13.          f4 tr
+vt 0.500000 1.000000  # 14.          f4 tl
+vt 0.500000 0.666666  # 15.          f4 bl
+vt 1.000000 0.666666  # 16.          f4 br
+vt 0.500000 0.000000  # 17.             f5
+vt 0.500000 0.333333  # 18.             f5
+vt 0.000000 0.333333  # 19.             f5
+vt 0.000000 0.000000  # 20.             f5
+vt 1.000000 0.000000  # 21.                f6
+vt 1.000000 0.333333  # 22.                f6
+vt 0.500000 0.333333  # 23.                f6
+vt 0.500000 0.000000  # 24.                f6
+
+# Polygonal and free-form geometry statement.
+#     vn i j k
+# 
+# Specifies a normal vector with components i, j, and k.
+# 
+# Vertex normals affect the smooth-shading and rendering of geometry.
+vn 0.0000 1.0000 0.0000   #  1. f1
+vn 0.0000 0.0000 1.0000   #  2.    f2
+vn -1.0000 0.0000 0.0000  #  3.       f3
+vn 0.0000 -1.0000 0.0000  #  4.          f4
+vn 1.0000 0.0000 0.0000   #  5.             f5
+vn 0.0000 0.0000 -1.0000  #  6.                f6
+
+#     Sets the smoothing group for the elements that follow it. If you do
+#     not want to use a smoothing group, specify off or a value of 0.
+# 
+#     s group_number
+#
+#     To display with smooth shading in Model and PreView, you must
+#     create vertex normals after you have assigned the smoothing groups.
+#     You can create vertex normals with the vn statement or with the
+#     Model program.
+s off
+
+# Referencing groups of vertices
+#     f 1/1/1 2/2/2 3/3/3 4/4/4
+#
+# Using v, vt, and vn to represent geometric vertices, texture vertices,
+# and vertex normals, the statement would read:
+#
+#     f v/vt/vn v/vt/vn v/vt/vn v/vt/vn
+#
+
+# x y z are the x, y, and z coordinates for the vertex. These are
+
+# example of f1 vertex representation
+#             x  y   z  indices
+#            -1, 1, -1 (5)-----------------(1) 1, 1, -1
+#                      /                     /
+#                    /                     /
+#                  /                     /
+#                /                     /
+#              /                     /
+#            /                     /
+# -1, 1, 1 (7)-----------------(3) 1, 1, 1
+
+# face order
+# top
+# front
+# left side
+# bottom
+# right side
+# back side
+
+f 1/1/1 5/2/1 7/3/1 3/4/1
+f 4/5/2 3/6/2 7/7/2 8/8/2
+f 8/9/3 7/10/3 5/11/3 6/12/3
+f 6/13/4 2/14/4 4/15/4 8/16/4
+f 2/17/5 1/18/5 3/19/5 4/20/5
+f 6/21/6 5/22/6 1/23/6 2/24/6
